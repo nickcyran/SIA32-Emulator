@@ -1,10 +1,5 @@
 # SIA32-Emulator
 
-### Emulated Specs
-d
-
-
-
 ## Operation codes
 
 |                  | **3R (11)**                                 | **2R (10)**                             | **Dest only (01)**      | **No R (00)**                         |
