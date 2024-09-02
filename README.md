@@ -1,5 +1,8 @@
 # SIA32-Emulator
 
+##Emulated Specs
+d
+
 
 
 ## Operation codes
