@@ -2,7 +2,7 @@
 
 
 
-##Operation codes
+## Operation codes
 
 |                  | **3R (11)**                                 | **2R (10)**                             | **Dest only (01)**      | **No R (00)**                         |
 | ---------------- | ------------------------------------------- | --------------------------------------- | ----------------------- | ------------------------------------- |
@@ -14,7 +14,7 @@
 | **Store (101)**  | Mem[Rd + Rs1] <- Rs2                        | mem[Rd + imm] <- Rs                     | Mem[Rd] <- imm          | UNUSED                                |
 | **Pop (110)**    | PEEK: Rd <- mem [sp – (Rs1+ Rs2)]           | PEEK: Rd <- mem[sp – (Rs +  imm)]       | POP: Rd  <- mem[sp++]   | INTERRUPT: Push pc; pc <- intvec[imm] |
 
-##Instruction Breakdown
+## Instruction Breakdown
 
 **3 Register (3R) - 11**
 | Immediate (8) | Rs1 (5) | Rs2 (5) | Function (4) | Rd (5) | Opcode (5) |
