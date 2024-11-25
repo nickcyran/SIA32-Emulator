@@ -1,5 +1,6 @@
 # SIA32-Emulator
-
+Developed an emulator for a 32-bit computer architecture, with 4KB of main memory and caching mechanisms to interect with the virtual ram more effectively. 
+As a part of this process I also created a custom assembly language to interface with the emulated hardware in a more straightforward manner.
 ## Operation codes
 
 |                  | **3R (11)**                                 | **2R (10)**                             | **Dest only (01)**      | **No R (00)**                         |
