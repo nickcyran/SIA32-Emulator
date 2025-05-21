@@ -84,17 +84,15 @@ The implementation of caching mechanisms was a critical part of this project, de
 * **Pre-Cache:** No caching, established a baseline with the highest cycle count.
 * **Instruction-Cache Only:** Clock cycles reduced to ~1/3 of pre-cache, highlighting single-level caching benefits for instruction fetching.
 * **L2-Cache Implemented (Instruction Cache Accessing L2):** Slight cycle increase versus instruction-cache-only due to smaller instruction cache underutilizing L2 memory.
-* **Access from L2 (Operations Access L2 Directly):** Best performance achieved; operations directly accessing L2 for reads/writes allowed proper cache utilization.
+* **Access from L2 (Operations Accessing L2):** Best performance achieved; operations directly accessing L2 for reads/writes allowed proper cache utilization.
 
  **Overall Impact:** Optimized L2 access dramatically cut clock cycles to ~1/4 of initial values, underscoring caching's importance. Linked lists were slowest (non-contiguous access); reverse array summation was second slowest (less effective forward caching).
 
 ## Project Learnings and Conclusion
+**Key takeaways:**
+* **The Power of Caching:** Caching was essential for performance, reducing clock cycles to ~1/4 of pre-cache. Iterative cache implementation (instruction cache, L2 cache, optimized L2 access) showed how memory hierarchies reduce clock cycles.
+* **Impact of Memory Access Patterns:**   Performance varied depending on data structures and access patterns, highlighting where the caching mechanism is strongest. For instance, non-sequential access in linked lists and reverse traversal of arrays showed less cache efficiency.
+* **Complexity of Hardware-Software Interface:** Implementing the ISA and assembler demonstrated the complexities between hardware and software, where ISA prompts directly impacted assembler complexity and program efficiency.
+* **Importance of Modular Design and Testing:** A component-based architecture (ALU, Memory, Processor, Caches) simplified development and allowed for crucial unit testing before system integration.
 
-This SIA32-Emulator project provided invaluable hands-on experience in computer architecture, bridging the gap between theoretical concepts and practical implementation. Key takeaways include:
-
-* **The Power of Caching:** The most significant performance gains were observed through the implementation of the caching system[cite: 37]. The iterative process of adding an instruction cache, then an L2 cache, and finally optimizing L2 access, clearly demonstrated how memory hierarchies drastically reduce execution time by minimizing direct main memory accesses. The results, showing a reduction in clock cycles to about one-fourth of pre-cache levels, empirically validated the importance of cache design and utilization[cite: 37].
-* **Impact of Memory Access Patterns:** The performance differences between array summation, reverse array summation, and linked list summation highlighted how data structure and memory access patterns interact with caching mechanisms[cite: 38]. The non-sequential access in linked lists and the less cache-friendly reverse traversal of arrays showed higher cycle counts compared to sequential array processing, emphasizing the need for cache-aware programming for optimal performance[cite: 38].
-* **Complexity of Hardware-Software Interface:** Designing the ISA and then building an assembler for it offered deep insights into the intricate relationship between hardware capabilities and software instructions. Every design choice in the ISA had direct implications for the complexity and functionality of the assembler and the types of programs that could be efficiently run.
-* **Importance of Modular Design and Testing:** The component-based architecture (ALU, Memory, Processor, Caches) allowed for focused development and unit testing. This was crucial for managing complexity and ensuring the correctness of each part before integrating them into the full system.
-
-In conclusion, the SIA32-Emulator project successfully met its objective of creating a functional 32-bit computer system simulation. It served as an excellent educational tool, reinforcing core concepts of CPU operation, memory hierarchy, instruction set design, and the performance implications of architectural choices. The measured impact of caching strategies provided a clear, quantifiable demonstration of their critical role in modern computing.
+In conclusion, the SIA32-Emulator project successfully created a functional 32-bit system simulation. It proved to be a valuable endeavor, emphasizing concepts of CPU operation, memory hierarchy, and the performance impact of architectural choices.
