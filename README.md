@@ -1,6 +1,39 @@
 # SIA32-Emulator
 
-This project is an emulator for a custom 32-bit computer architecture called SIA32. The emulator simulates the hardware components along with their interactions, including a CPU, main memory with caching mechanisms, and an Arithmetic Logic Unit (ALU). To facilitate interaction with the emulated hardware, a custom assembly language and an assembler were developed.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6075443c-dd63-4864-a842-122e2dc6e252" alt="sia32" width="300" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Project%20Status-Completed-brightgreen" alt="Project Status: Completed">
+</p>
+
+**Dive into the world of computer architecture with the SIA32-Emulator!**
+
+SIA32-Emulator is a comprehensive simulation of a custom 32-bit computer system. This project was developed as a final project for a university computer architecture course to provide a hands-on learning experience with the fundamental concepts of computer design and operation.
+
+It allows you to explore everything from the CPU's fetch-decode-execute cycle and memory hierarchies (including L1 and L2 caching) to writing and running programs in a unique assembly language. Perfect for students, hobbyists, and anyone curious about how computers work at a fundamental level.
+
+
+## Motivation & Purpose
+
+The primary motivation for this project was to apply theoretical knowledge of computer architecture in a practical setting. It served as a final project, aiming to build a working emulator for a custom 32-bit instruction set architecture (ISA), thereby solidifying understanding of CPU design, memory systems, and assembly language.
+
+## Overview of Features
+
+* **Full 32-bit Architecture Simulation:** Emulates a custom SIA32 architecture.
+* **CPU Emulation:** Simulates CPU cycles (Fetch, Decode, Execute, Store).
+* **Memory System:** Includes Main Memory (DRAM), L2 Cache, and Instruction Cache.
+* **ALU Operations:** Performs arithmetic and logical operations.
+* **Custom Assembly Language:** Comes with its own assembler to translate assembly to machine code.
+* **Comprehensive Instruction Set:** Supports Math, Branch, Call, Memory, and Control Flow operations.
+* **JUnit Testing:** Thoroughly tested components.
+
+## Table of Contents
+* [Key Features](#key-features)
+* [Operation Codes](#operation-codes)
+* [Instruction Breakdown](#instruction-breakdown)
+
 
 ## Key Features:
 
@@ -34,7 +67,6 @@ This project is an emulator for a custom 32-bit computer architecture called SIA
 | **Store (101)** | Mem[Rd + Rs1] <- Rs2                        | mem[Rd + imm] <- Rs                     | Mem[Rd] <- imm          | UNUSED                                |
 | **Pop (110)** | PEEK: Rd <- mem [sp – (Rs1+ Rs2)]           | PEEK: Rd <- mem[sp – (Rs +  imm)]       | POP: Rd  <- mem[sp++]   | INTERRUPT: Push pc; pc <- intvec[imm] |
 
-
 ## Instruction Breakdown
 
 **3 Register (3R) - 11**
@@ -52,3 +84,5 @@ This project is an emulator for a custom 32-bit computer architecture called SIA
 **No Register (0R) - 00**
 | Immediate (27) | Opcode (5) |
 | :------------- | :--------- |
+
+
